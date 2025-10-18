@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <p>
+      <button onclick="value+=1; console.log(value)">1</button>
+      <button onclick="value += 2; console.log(value);">2</button>
+      <button onclick="value += 3; console.log(value);">3</button>
+      <button onclick="value += '+'; console.log(value);">+</button>
+    </p>
+    <p>
+      <button onclick="value += 4; console.log(value);">4</button>
+      <button onclick="value += 5; console.log(value);">5</button>
+      <button onclick="value += 6; console.log(value);">6</button>
+      <button onclick="value += '-'; console.log(value);">-</button>
+    </p>
+    <p>
+      <button onclick="value += 7; console.log(value);">7</button>
+      <button onclick="value += 8; console.log(value);">8</button>
+      <button onclick="value += 9; console.log(value);">9</button>
+      <button onclick="value += '*'; console.log(value);">*</button>
+    </p>
+    <p>
+      <button onclick="value += 0; console.log(value);">0</button>
+      <button onclick="value += '.'; console.log(value);">.</button>
+      <button onclick="value = eval(value); console.log(value);">=</button>
+      <button onclick="value += '/'; console.log(value);">/</button>
+    </p>
+    <p>
+      <button onclick="value = ''; console.log('Cleared..');">Clear</button>
+    </p>
+    <script>
+      let value = "";
+    </script>
+  </body>
+</html>

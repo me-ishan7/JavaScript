@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables</title>
+</head>
+<body>
+  <button onclick="console.log(`Cartqty = ${cartQty}`)">Show Qty</button>
+  <button onclick="cartQty += 1; console.log(`cartQty : ${cartQty}`)">Add to Cart</button>
+  <button onclick="cartQty += 2; console.log(`cartQty : ${cartQty}`)">+2</button>
+  <button onclick="cartQty += 3; console.log(`cartQty : ${cartQty}`)">+3</button>
+  <button onclick="cartQty = 0; console.log(`cartQty : ${cartQty}`)">Reset Cart</button>
+
+  <script>
+    let cartQty = 0;
+    var msg = 'Ishan';
+    console.log(typeof cartQty);
+    console.log(typeof msg);
+    console.log(`My name is $${msg}`);
+
+    // The commented-out code remains untouched as per your request
+    // let variable1 = 3;
+    // console.log(variable1);
+    // let calculation = 7;
+    // console.log(calculation);
+    // console.log(calculation + variable1);
+    // let result = calculation + variable1 + 9;
+    // console.log(result)
+    // console.log(alert(result));
+  </script>
+</body>
+</html>
