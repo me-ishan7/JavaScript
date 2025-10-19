@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin-Flip Game</title>
+</head>
+<body>
+  <h1>Coin-Flip Game</h1>
+
+  <button onclick="playgame('Heads')">Heads</button>
+  <button onclick="playgame('Tails')">Tails</button>
+  <button onclick="ResetScore()">Reset</button>
+
+  <script>
+    let score = JSON.parse(localStorage.getItem('score')) || {user : 0,
+      computer : 0};
+
+    function ResetScore(){
+      score.user = 0;
+      score.computer = 0;
+      localStorage.removeItem('score');
+      alert('Scores have been reset!')
+    }
+    
+    function playgame(choice){
+      let randomNumber = Math.random();
+      let result = "";
+      let computerChoice = "";
+
+      // Computer Choice Generation
+      computerChoice = randomNumber < 0.5 ?  "Heads" : "Tails";
+      
+      // Deciding Result
+      if(choice === 'Heads'){
+        result = (computerChoice === choice) ? 'You win' : 'You lose';
+      }
+      else {
+        result = (computerChoice === choice) ? 'You win' : 'You lose';
+      }
+      
+      // Updating Score
+      if(result === 'You win') score.user += 1;
+      else score.computer += 1;
+
+      // Saving to Local Storage so code don't get reset when page refresh
+
+      localStorage.setItem('score', JSON.stringify(score));
+
+      alert(`Computer choosed ${computerChoice}, You choosed ${choice}\n ${result}\n Scores => user : ${score.user}   Computer : ${score.computer}`);
+
+    };
+  </script>
+</body>
+</html>
