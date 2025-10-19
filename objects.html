@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+     const product = {
+      name : 'tshirts',
+      price : 5.99,
+      color : 'blue',
+      rating : {
+        rate : 4.5,
+        count : 234
+      },
+      fun : function(){
+        console.log('Function inside object');
+      }
+    };
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.price = 34;
+    console.log(product);
+
+    product.newProperty = 'true';
+    console.log(product);
+
+    delete product.color;
+    console.log(product);
+
+    console.log(product['rating']['rate']);
+
+    product.fun();
+
+    product2 = {
+      jeans : 'Levis',
+      price : 45.99,
+      rating : {
+        rate : 4.7,
+        count : 150
+      },
+      fun2 : function(){
+        console.log('This is a jeans');
+      }
+    }
+    // convert object to JSON > JSON.stringify(product2)
+
+    console.log(JSON.stringify(product2));
+
+    // convert JSON to object > JSON.parse(jasonString)
+
+    const jasonString = JSON.stringify(product2);
+    console.log(JSON.parse(jasonString));
+
+    /* JSON : JavaScript Object Notation
+    Used to transfer data over the web
+    uses double quotes for keys and string values and does not allow functions */
+
+  </script>
+</body>
+</html>
