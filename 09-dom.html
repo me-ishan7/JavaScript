@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button>Hello</button>
+  
+  <button class="js-button">Second Button</button>
+  
+  <script>
+    console.log(document.title);
+    document.title = 'changed';
+    
+    // console.log(document.body);
+    // document.body.innerHTML = 'Content changed'
+
+    console.log(document.querySelector('button'));
+    document.querySelector('button').innerHTML = 'First Button';
+
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+   
+    window.onload = function() {
+      console.log('Page Loaded');
+    };
+    window.console.log("Window is the container for the document object or content of the page");
+
+  </script>
+</body>
+</html>

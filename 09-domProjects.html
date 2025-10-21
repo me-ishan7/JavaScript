@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Projects</title>
+</head>
+<body>
+  <!-- <p>Youtube Subscribe Button</p>
+
+  <button onclick="Subscribe()"; class="js-subscribe-button">
+    Subscribe
+  </button> -->
+
+  <h2>Amazon Shipping Calculator</h2>
+  <p>Orders under $40 = +$10 Shipping</p>
+  <p>Orders over $40 = FREE Shipping</p>
+
+  <label for="orderCost">Enter Order Amount: </label>
+  <input type="number" class="js-amount-input" name="orderCost" placeholder="Cost of Order" onkeydown="handleCostKeyDown(event)"/>
+
+  <button onclick="CalculateCost()">Calculate</button>
+  <p class="js-total-cost"></p>
+
+  <script>
+    function handleCostKeyDown(event) {
+      if(event.key === 'Enter') { 
+        CalculateCost();
+      }
+    }
+    function CalculateCost(){
+      let amountValue  = Number(document.querySelector('.js-amount-input').value);
+      if(isNaN(amountValue) || amountValue <= 0){
+        alert('Please enter a valid amount');
+        return;
+      }
+      amountValue = amountValue < 40 ? amountValue + 10 : amountValue;
+      
+      document.querySelector('.js-total-cost').innerHTML =
+      `$${amountValue}(Including Shipping)`;
+    }
+
+    // function Subscribe(){
+    //   const buttonElement = document.querySelector('.js-subscribe-button');
+    //   if(buttonElement.innerText === 'Subscribe') {
+    //     buttonElement.innerText = 'Subscribed';
+    //   }
+    //   else {
+    //     buttonElement.innerText = 'Subscribe';
+    //   }
+    // }
+  </script>
+</body>
+</html>
